@@ -1,0 +1,130 @@
+
+@media screen and (min-width: 850px) {
+    .menuwrapper {
+        background-color: whitesmoke;
+        width: 100%;
+        position: fixed;
+        height: 70px;
+        display: flex;
+        flex-direction: row;
+        padding: 5px;
+        z-index: 9999;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+    .logoMenu {
+        width: 20%;
+    }
+
+    .bdmMenu {
+        margin-left: 20%;
+        width: 20%;
+        text-align: center;
+        height: 60px;
+        line-height: 60px;
+        text-align: center;
+        font-weight: 700;
+        color: black
+    }
+    .poleMenu {
+        width: 20%;
+        text-align: center;
+        height: 60px;
+        line-height: 60px;
+        text-align: center;
+        font-weight: 700;
+        color: black
+    }
+    .userMenu {
+        width: 20%;
+        text-align: center;
+        height: 60px;
+        line-height: 60px;
+        text-align: center;
+        font-weight: 700;
+        color: black
+    }
+    
+    .bdmMenu:hover {
+        background-color: #42ab9e;
+        cursor: pointer;
+        color: white;
+        border-radius: 10px;
+
+    }
+    .poleMenu:hover {
+        background-color: #42ab9e;
+        cursor: pointer;
+        color: white;
+        border-radius: 10px;
+    }
+    .userMenu:hover {
+        background-color: #42ab9e;
+        cursor: pointer;
+        color: white;
+        border-radius: 10px;
+    }
+  }
+  /////////////////version mobile/////////////////////////
+  @media screen and (max-width: 850px) {
+    .menuwrapper {
+        background-color: whitesmoke;
+        width: 100%;
+        position: fixed;
+        height: 70px;
+        display: flex;
+        flex-direction: row;
+        padding: 5px;
+        z-index: 9999;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+
+    
+    .bdmMenu:hover {
+        background-color: #42ab9e;
+        cursor: pointer;
+        color: white;
+        border-radius: 10px;
+    }
+    .poleMenu:hover {
+        background-color: #42ab9e;
+        cursor: pointer;
+        color: white;
+        border-radius: 10px;
+    }
+    .userMenu:hover {
+        background-color: #42ab9e;
+        cursor: pointer;
+        color: white;
+        border-radius: 10px;
+    }
+    .bdmMenu {
+        width: 25%;
+        text-align: center;
+        height: 60px;
+        line-height: 60px;
+        text-align: center;
+        font-weight: 700;
+        color: black
+    }
+    .poleMenu {
+        width: 25%;
+        text-align: center;
+        height: 60px;
+        line-height: 60px;
+        text-align: center;
+        font-weight: 700;
+        color: black
+    }
+    .userMenu {
+        width: 25%;
+        text-align: center;
+        height: 60px;
+        line-height: 60px;
+        text-align: center;
+        font-weight: 700;
+        color: black
+    }
+  }
+  
+
+

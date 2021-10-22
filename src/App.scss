@@ -1,0 +1,538 @@
+
+  .accordion {
+    background-color: whitesmoke;
+    border-radius: 10px;
+    margin-bottom: 2%;
+    padding: 20px;
+  }
+  .handle {
+    color: #fea02c;
+    text-align: center;
+  }
+  .content {
+    color: #519ac2;
+  }
+  .information {
+    background-color: whitesmoke;
+    border-radius: 10px;
+    margin-bottom: 2%;
+    padding: 20px;
+  }
+  .gI {
+    display: flex;
+    width: 100% !important;
+    flex-direction: row;
+  }
+  .pTitle {
+    text-align: center;
+    width: 50% !important;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    color: #519ac2;
+  }
+  .pData {
+    text-align: center;
+    width: 50% !important;
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+  .GeneralInfosTable {
+    width: 100%;
+  }
+  .title {
+    text-align: center;
+    color: #fea02c;
+  }
+  .gC {
+    display: flex;
+    width: 100% !important;
+    flex-direction: row;
+  }
+  .contentTitle {
+    text-align: center;
+    width: 50% !important;
+    margin: 15px;
+  }
+  .contentData {
+    text-align: center;
+    width: 50% !important;
+    margin: 2px;
+    color: black;
+  }
+  .tableWrapper {
+    width: 100%;
+  }
+  .geoCornerTitle {
+    text-align: center;
+  }
+  .tableElementCartographicSystemTop {
+    text-align: center;
+    width: 100%;
+  }
+  .csTitleTop {
+    text-align: center;
+    width: 100%;
+    //   margin-top: 15px;
+    //   margin-bottom: 15px;
+  }
+  .csDataTop {
+    text-align: center;
+    width: 100%;
+    color: black;
+  }
+  .csDataBottom {
+    text-align: center;
+    width: 100%;
+    color: black;
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+  .tableElementCartographicSystemMiddleTitle {
+    display: flex;
+    width: 100% !important;
+    flex-direction: row;
+  }
+  .csDataMiddleData {
+    width: 50%;
+    text-align: center;
+  }
+
+  .tableElementCartographicSystemMiddleData {
+    display: flex;
+    flex-direction: revert;
+    width: 100%;
+  }
+  .csDataMiddleData {
+    color: black;
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+
+  .csTitleMiddleTitle {
+    // margin-top: 15px;
+    // margin-bottom: 15px;
+    width: 50%;
+    text-align: center;
+  }
+
+  .csTitleBottom {
+    text-align: center;
+    width: 100%;
+  }
+
+  .tableElementCartographicSystemBottom {
+    display: flex;
+  }
+
+  .tCS {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+  .csTitle {
+    width: 50%;
+    text-align: center;
+    // margin-bottom: 15px;
+    // margin-top: 15px;
+  }
+  .csData {
+    width: 50%;
+    color: black;
+    margin-top: 2px;
+    text-align: center;
+    margin-bottom: 2px;
+    text-align: center;
+  }
+  .pcTitle {
+    text-align: center;
+    color: #fea02c;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  .vData {
+    width: 50%;
+    text-align: left;
+    margin-left: 2px;
+    color: black;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    padding-left: 15px;
+  }
+  .vectorName {
+    width: 50%;
+    text-align: right;
+    margin-right: 2px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    padding-right: 15px;
+  }
+  .iTitle {
+    width: 50%;
+    text-align: right;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-right: 15px;
+  }
+
+  .GcTitle {
+    width: 50%;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-top: 10px;
+  }
+  .iData {
+    width: 50%;
+    text-align: left;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    color: black;
+    padding-left: 15px;
+  }
+  .gCData {
+    width: 50%;
+    text-align: center;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    color: black;
+  }
+  .giTitle {
+    width: 50%;
+    text-align: right;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: #519ac2;
+    padding-right: 15px;
+  }
+  .giData {
+    width: 50%;
+    text-align: left;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    color: black;
+    margin-left: 15px;
+  }
+  .tchild {
+    transition: all 0.2s ease-in-out;
+  }
+  .cesium-widget-credits {
+    visibility: hidden;
+  }
+  // .tchild:hover {
+  //     cursor: pointer;
+  //     transform: scale(1.1);
+  //     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  //     padding: 10px;
+  // }
+
+  .tablediffInfos {
+    width: 100%;
+  }
+
+  .tjs-branding__branding img {
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+    height: 52px !important;
+  }
+
+  @media screen and (max-width: 1440px) {
+    .searchFor {
+      z-index: 99;
+      text-align: left;
+      background-color: #59616c;
+      color: white;
+      position: absolute;
+      right: 90px;
+      bottom: -56px;
+      width: 238px;
+      padding: 10px;
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    .searchFor {
+      z-index: 99;
+      text-align: left;
+      background-color: #59616c;
+      color: white;
+      position: absolute;
+      right: 90px;
+      bottom: -10px;
+      width: 238px;
+      padding: 10px;
+    }
+  }
+  .modal-zone-header {
+    padding: 10px;
+    background-color: hsl(201, 48%, 54%);
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    height: 70vh;
+    width: 80%; /* Could be more or less, depending on screen size */
+    position: absolute;
+    z-index: 999;
+    margin-left: 10%;
+    margin-top: 120px;
+  }
+  
+  .modal-content-error {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    height: 20vh;
+    width: 40%; /* Could be more or less, depending on screen size */
+    position: absolute;
+    z-index: 999;
+    margin-left: 30%;
+    margin-top: 120px;
+  }
+
+  
+.product-info-wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.product-key {
+  width: 50%;
+  text-align: right;
+}
+
+.product-info-from-key {
+  width: 50%;
+  text-align: left;
+  margin-left: 30px;
+}
+
+
+.copyButton {
+  outline: 0;
+  background: #fdad4a;
+  width: 20%;
+  margin-left: 15px;
+  border: 0;
+  padding: 3px;
+  color: #ffffff;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  border-radius: 5px;
+  bottom: 0;
+  height: 28px;
+}
+  
+  /* The Close Button */
+  .close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #aaa;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  
+  .searchButtonMatching {
+    outline: 0;
+    background: #fdad4a;
+    width: 80%;
+    border: 0;
+    padding: 10px;
+    color: #ffffff;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    bottom: 0;
+    transition: all .2s ease-in-out; 
+  }
+
+  .searchButtonMatching:hover {
+    transform: scale(1.01);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  
+
+  .searchButtonMatchingDisabled {
+    outline: 0;
+    background: lightgrey;
+    width: 80%;
+    border: 0;
+    padding: 10px;
+    color: #ffffff;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    bottom: 0;
+    cursor:not-allowed;
+  }
+  
+  .product {
+    width: 90%;
+    margin-left: 5%;
+    padding: 10px;
+    margin-top: 5px;
+    transition: all .2s ease-in-out; 
+    margin-bottom: 5px;
+    background-color: whitesmoke;
+    // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  
+  .product:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  }
+  
+  .modal-zone-content {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+  
+  .modal-zone-content-left {
+    width: 34%;
+    background-color: whitesmoke;
+    height: 63vh;
+  }
+
+  .modal-zone-content-center {
+    width: 33%;
+    height: 63vh;
+  }
+  
+  .modal-zone-content-right {
+    width: 33%;
+    height: 63vh;
+  }
+  
+  .modal-zone-mini-title {
+    text-align: left;
+    margin-left: 10%;
+    font-size: 18px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+  
+  .canvas { border: 1px solid black; }
+
+  .round-button {
+    background-color: whitesmoke;
+    width: 30px;
+    border-radius: 25px;
+    margin-left: 13px;
+  }
+  
+  .round-button:hover {
+    cursor: pointer;
+  }
+
+  .modal-zone-back {
+    color: #fdad4a;
+    padding: 10px;
+    font-size: 18px;
+  }
+  
+  .modal-zone-back:hover {
+    cursor: pointer;
+    color: #519ac2;
+  }
+
+.addButtonCatalogDisabled {
+  outline: 0;
+  background: limegreen;
+  width: 80%;
+  border: 0;
+  padding: 10px;
+  color: #ffffff;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  bottom: 0;
+  cursor:not-allowed;
+}
+
+.addButtonCatalog {
+  outline: 0;
+  background: #519ac2;
+  width: 80%;
+  border: 0;
+  padding: 10px;
+  color: #ffffff;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  bottom: 0;
+  transition: all .2s ease-in-out; 
+}
+
+.addButtonCatalog:hover {
+  transform: scale(1.01);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+.loader {
+  text-align: center;
+  margin-top: 200px;
+  color: #519ac2;
+  font-size: 18px;
+}
+
+.addLayerButton {
+  border: 0;
+  color: #ffffff;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+  bottom: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
