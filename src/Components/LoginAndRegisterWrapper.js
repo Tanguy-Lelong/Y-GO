@@ -1,5 +1,5 @@
 
-import AdminInterface from './Admin/AdminInterface';
+// import AdminInterface from './Admin/AdminInterface';
 import UserInterface from './User/UserInterface';
 import React, { useState } from 'react';
 import Register from './Register';
@@ -19,11 +19,6 @@ export function LoginAndregisterWrapper() {
   const dispatch = useDispatch();
   const statusPage = useSelector(storeStatusPage);
 
-    if (statusPage === "AdminPage" || (localStorage.getItem("Admin") === "true")) {
-      return (
-        <AdminInterface/>
-      )
-    }
     if (statusPage === "UserPage" || (localStorage.getItem("Admin") === "false")) {
       return (
         <UserInterface/>

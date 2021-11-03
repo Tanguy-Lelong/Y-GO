@@ -11,7 +11,8 @@ export const slice = createSlice(
             userMenuSelected: "Data",
             token: "",
             missingField: 0,
-            isDarkMode: false
+            isDarkMode: false,
+            isSideBarVisible: false,
         },
         reducers: {
             changeUserName: (state, action) => {
@@ -38,11 +39,14 @@ export const slice = createSlice(
             changeDarkMode: (state, action) => {
               state.isDarkMode = action.payload;
             },
+            changeSideBarVisibility: (state, action) => {
+              state.isSideBarVisible = action.payload;
+            },
         },
     }
 );
 
-export const { changeUserName, changeStatusPage, changeUser, changeSearchValue, changeUserMenuSelected, changeToken, changeMissingField, changeDarkMode } = slice.actions;
+export const { changeUserName, changeStatusPage, changeUser, changeSearchValue, changeUserMenuSelected, changeToken, changeMissingField, changeDarkMode, changeSideBarVisibility } = slice.actions;
 
 
 
@@ -61,5 +65,7 @@ export const storeToken = state => state.store.token;
 export const storeMissingField = state => state.store.missingField;
 
 export const storeDarkMode = state => state.store.isDarkMode;
+
+export const storeSideBarVisibility = state => state.store.isSideBarVisible;
 
 export default slice.reducer;

@@ -97,55 +97,55 @@ export function Login() {
     }
 
       const login = (values) => {
-        setIsLoggingIn(true)
-          console.log(values)
-        localStorage.setItem("User", values.username)
-        const authenticationData = {
-          Username : values.username,
-          Password : values.password,
-        };
-        const authenticationDetails = new AmazonCognitoIdentity.AuthenticationDetails(authenticationData);
-        const userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
-        const userData = {
-            Username : values.username,
-            Pool : userPool,
-        };
-        const cognitoUser = new AmazonCognitoIdentity.CognitoUser(userData);
-        cognitoUser.authenticateUser(authenticationDetails, {
-          onSuccess: function (result) {
-            localStorage.setItem('Token', result.idToken.jwtToken);
-            setErrorOnLogin(false);
-            if (result.accessToken.payload['cognito:groups']) {
-                if (result.accessToken.payload['cognito:groups'].includes("Admin") === true) {
-                    localStorage.setItem('Token', result.idToken.jwtToken);
-                    dispatch(changeStatusPage("AdminPage"));
-                    dispatch(changeUserName(values.username));
-                    dispatch(changeToken(result.idToken.jwtToken));
-                    localStorage.setItem("Admin", "true")
+        // setIsLoggingIn(true)
+        //   console.log(values)
+        // localStorage.setItem("User", values.username)
+        // const authenticationData = {
+        //   Username : values.username,
+        //   Password : values.password,
+        // };
+        // const authenticationDetails = new AmazonCognitoIdentity.AuthenticationDetails(authenticationData);
+        // const userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
+        // const userData = {
+        //     Username : values.username,
+        //     Pool : userPool,
+        // };
+        // const cognitoUser = new AmazonCognitoIdentity.CognitoUser(userData);
+        // cognitoUser.authenticateUser(authenticationDetails, {
+        //   onSuccess: function (result) {
+        //     localStorage.setItem('Token', result.idToken.jwtToken);
+        //     setErrorOnLogin(false);
+        //     if (result.accessToken.payload['cognito:groups']) {
+        //         if (result.accessToken.payload['cognito:groups'].includes("Admin") === true) {
+        //             localStorage.setItem('Token', result.idToken.jwtToken);
+        //             dispatch(changeStatusPage("AdminPage"));
+        //             dispatch(changeUserName(values.username));
+        //             dispatch(changeToken(result.idToken.jwtToken));
+        //             localStorage.setItem("Admin", "true")
 
-                }
-                else {
-                    localStorage.setItem('Token', result.idToken.jwtToken);
-                    dispatch(changeStatusPage("UserPage"));
-                    dispatch(changeUserName(values.username));
-                    dispatch(changeToken(result.idToken.jwtToken));
-                    localStorage.setItem("Admin", "false")
-                }
-            }
-            else {
-                localStorage.setItem('Token', result.idToken.jwtToken);
-                dispatch(changeStatusPage("UserPage"));
-                dispatch(changeUserName(values.username));
-                dispatch(changeToken(result.idToken.jwtToken));
-                localStorage.setItem("Admin", "false")
-            }
+        //         }
+        //         else {
+        //             localStorage.setItem('Token', result.idToken.jwtToken);
+        //             dispatch(changeStatusPage("UserPage"));
+        //             dispatch(changeUserName(values.username));
+        //             dispatch(changeToken(result.idToken.jwtToken));
+        //             localStorage.setItem("Admin", "false")
+        //         }
+        //     }
+        //     else {
+        //         localStorage.setItem('Token', result.idToken.jwtToken);
+        //         dispatch(changeStatusPage("UserPage"));
+        //         dispatch(changeUserName(values.username));
+        //         dispatch(changeToken(result.idToken.jwtToken));
+        //         localStorage.setItem("Admin", "false")
+        //     }
 
-          },
-          onFailure: function(err) {
-            setErrorOnLogin(true)
-            console.log(err)
-          }
-        });
+        //   },
+        //   onFailure: function(err) {
+        //     setErrorOnLogin(true)
+        //     console.log(err)
+        //   }
+        // });
       }
     
     if (loginStatus === "Forgot") {
