@@ -1,0 +1,46 @@
+.RegisterWrapper {
+    font-size: 22px;
+    color: #236192;
+    margin-top: -50px;
+    margin-bottom: 50px;
+    color: #42ab9e;
+    border-bottom: 1px solid #42ab9e;
+    .inputStyleRegister {
+        padding: 10px;
+        border-radius: 5px;
+    }
+    .registerButton {
+        width: 100%;
+        height: 40px;
+        border-radius: 5px;
+    }
+}
+
+@media screen and (min-width: 850px) {
+    .registerPage {
+      margin-top: 150px;
+    }
+    .formLogin {
+      width: 30%;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 20px;
+      height: 300px;
+    }
+    
+}
+  /////////////////version mobile/////////////////////////
+@media screen and (max-width: 850px) {
+    .registerPage {
+      margin-top: 150px;
+    }
+    .formLogin {
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 20px;
+      height: 300px;
+    }
+
+}
+  

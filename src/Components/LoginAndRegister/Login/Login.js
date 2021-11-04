@@ -1,19 +1,12 @@
 import React, { useState } from 'react';
 import * as AmazonCognitoIdentity from 'amazon-cognito-identity-js';
-import './LoginAndRegisterWrapper.scss';
-import { poolData } from '../Pool';
+import './Login.scss';
+import { poolData } from '../../../Pool';
 import { Form, Input, Button } from 'antd';
 import { useDispatch } from 'react-redux';
 import OtpInput from 'react-otp-input';
 import { LoadingOutlined } from '@ant-design/icons';
-import {
-  changeUserName,
-  changeStatusPage,
-  changeToken
-} from '../features/Store/Store';
-
-import 'antd/dist/antd.css';
-
+import { changeStatusPage } from '../../../features/Store/Store';
 
 export function Login() {
 
@@ -75,7 +68,6 @@ export function Login() {
         onSuccess: data => {
           cognitoUser.authenticateUser(authenticationDetails, {
             onSuccess: function (result) {
-              // setLoginStatus("Login");
               setStateLastButton("You have successfully changed your password");
             }
           });
@@ -157,11 +149,8 @@ export function Login() {
             <div>
             <Input style={{width: "90%", padding: "10px", borderRadius: "5px", marginLeft: "5%"}} placeholder="ENTRE TON EMAIL YNOV" onChange={(e) => setUsername(e.target.value)}/>
             </div>
-           
             <div>
-      
               </div>
-
               <div style={{width: "90%", marginLeft: "5%", marginTop: "20px"}}>
                 <Button style={{width: "100%", borderRadius: "5px", height: "40px"}} onClick={() => resetPassword()}>Envoyer le code de récupération</Button>
               </div>
@@ -191,7 +180,6 @@ export function Login() {
       else {
         return (
           <div className="loginPage">
-          
           <div style={{width: "30%", marginLeft: "35%"}}>
             </div>
             <div style={{fontSize: 22, color: "#236192", marginTop: "-50px", marginBottom: "50px"}}>Back office</div>

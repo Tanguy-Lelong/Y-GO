@@ -1,10 +1,11 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import './index.css'
-import App from './App'
-import store from './app/store'
-import { Provider } from 'react-redux'
-import 'semantic-ui-css/semantic.min.css'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import store from './app/store';
+import { Provider } from 'react-redux';
+import 'semantic-ui-css/semantic.min.css';
+import 'antd/dist/antd.css';
 
 ReactDOM.render(
   <Provider store={store}>

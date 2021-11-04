@@ -1,29 +1,17 @@
-import React, { Component, useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './Menu.scss'
-import logoYnovBDE from '../images/logoYnovBDE.jpg';
-import logoYnov from '../images/LOGO_CAMPUS.png';
+import logoYnov from '../../images/LOGO_CAMPUS.png';
 import { UserOutlined} from '@ant-design/icons';
-
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
-
-import {
-  changeSideBarVisibility, storeSideBarVisibility
-} from '../features/Store/Store';
+import { BrowserRouter as Router, Link } from "react-router-dom";
+import { changeSideBarVisibility, storeSideBarVisibility } from '../../features/Store/Store';
 import { useSelector, useDispatch } from 'react-redux';
-
-
 
 export default function MenuBar() {
   const dispatch = useDispatch();
   const sideBarVisibility = useSelector(storeSideBarVisibility);
   const [isMenuOpen, setMenuStatus] = useState(false)
 
-  const zeub = () => {
+  const showSideBarMobileVersion = () => {
     dispatch(changeSideBarVisibility(!sideBarVisibility))
     const menuBtn = document.querySelector('.menu-btn');
     if(!isMenuOpen) {
@@ -33,19 +21,14 @@ export default function MenuBar() {
       menuBtn.classList.remove('open');
       setMenuStatus(false);
     }
-
   }
-  
-  useEffect(() => {
-    console.log("window", window.innerWidth)
-  }, []);
 
   if (window.innerWidth <= 500) {
     return (
       <div className="menuwrapper">
-          <div onClick={() => zeub()} style={{width: "20%"}} className="btnSidebar">
-            <div class="menu-btn">
-              <div class="menu-btn__burger"></div>
+          <div onClick={() => showSideBarMobileVersion()} style={{width: "20%"}} className="btnSidebar">
+            <div className="menu-btn">
+              <div className="menu-btn__burger"></div>
             </div>
           </div>
           <div className="logoMenu">
@@ -74,8 +57,5 @@ export default function MenuBar() {
           </div>
       </div>
     )
-  }
-
-
-    
+  } 
 }

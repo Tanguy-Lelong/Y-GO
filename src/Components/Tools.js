@@ -42,6 +42,3 @@ export const config = {
         Authorization: localStorage.getItem("Token")
     }
 }
-
-
-
