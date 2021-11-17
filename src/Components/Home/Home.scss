@@ -17,3 +17,15 @@
 .homeKey{
   font-weight: bold;
 }
+
+#detail{
+  display: flex;
+  flex-direction: row;
+}
+
+.detail-child {
+  width: 50%;
+}
+.ant-modal-title{
+  font-weight: bold;
+}
