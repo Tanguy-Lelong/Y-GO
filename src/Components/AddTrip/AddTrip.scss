@@ -1,0 +1,15 @@
+@media screen and (max-width: 850px) {
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    background-color: whitesmoke;
+    border-radius: 20px;
+    margin: 20px;
+    padding: 20px;
+    color: grey;
+  }
+
+  .anticon-star {
+    background-color: red;
+  }
+}
