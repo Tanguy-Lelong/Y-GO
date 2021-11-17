@@ -72,14 +72,17 @@ export default function AddTrip() {
               {
                 required: true,
                 message: "Entrer une heure de départ",
-              },
             ]}
           >
             <TimePicker placeholder="heure de départ" />
           </Form.Item>
 
           <Form.Item name="passengers" label="Nombre de passager">
-            <Rate character={<UserOutlined />} style={{ color: "green" }} />
+            <Rate
+              count={4}
+              character={<UserOutlined />}
+              style={{ color: "green" }}
+            />
           </Form.Item>
 
           <Form.Item label="Voiture fumeur" valuePropName="checked">
