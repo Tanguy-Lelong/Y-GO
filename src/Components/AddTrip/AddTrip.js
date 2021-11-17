@@ -9,6 +9,7 @@ import {
   Card,
   TimePicker,
   Rate,
+  TextArea,
 } from "antd";
 
 import { UserOutlined } from "@ant-design/icons";
@@ -16,6 +17,8 @@ import { UserOutlined } from "@ant-design/icons";
 import "./AddTrip.scss";
 
 export default function AddTrip() {
+  const { TextArea } = Input;
+
   const onFinish = (values) => {
     console.log("Success:", values);
   };
@@ -41,7 +44,7 @@ export default function AddTrip() {
             name="departure_localisation"
             rules={[{ required: true, message: "Entrer une ville de départ" }]}
           >
-            <Input />
+            <Input placeholder="Ex : Antibes" />
           </Form.Item>
 
           <Form.Item
@@ -49,20 +52,19 @@ export default function AddTrip() {
             name="arriving_localisation"
             rules={[{ required: true, message: "Entrer une ville d'arrivé" }]}
           >
-            <Input />
+            <Input placeholder="Ex : Sophia Antipolis" />
           </Form.Item>
 
           <Form.Item
-            label="Date de départ"
+            label="Date et heure de départ"
             name="departure_time"
             rules={[{ required: true, message: "Choisisser une date" }]}
           >
-            <DatePicker />
+            <DatePicker placeholder="date de départ" />
           </Form.Item>
 
           <Form.Item
             name="departure"
-            label="Heure de départ"
             rules={[
               {
                 type: "DateTime",
@@ -73,7 +75,7 @@ export default function AddTrip() {
               },
             ]}
           >
-            <TimePicker />
+            <TimePicker placeholder="heure de départ" />
           </Form.Item>
 
           <Form.Item name="passengers" label="Nombre de passager">
@@ -85,7 +87,11 @@ export default function AddTrip() {
           </Form.Item>
 
           <Form.Item label="Ajouter une description">
-            <Input placeholder="Description" />
+            <TextArea
+              allowClear
+              autoSize={{ minRows: 4, maxRows: 4 }}
+              placeholder="Description"
+            />
           </Form.Item>
 
           <Form.Item wrapperCol={{ offset: 5 }}>
