@@ -5,6 +5,7 @@ import { Icon, Menu, Sidebar } from 'semantic-ui-react';
 import MenuBar from './Components/Menu/Menu';
 import { storeSideBarVisibility } from './features/Store/Store';
 import { useSelector } from 'react-redux';
+import Home from "./Components/Home/Home"
 
 
 export default function App() {
@@ -28,7 +29,7 @@ export default function App() {
           <LoginAndregisterWrapper/>
         </Route>
         <Route path="/">
-          Home
+          <Home/>
         </Route>
       </Switch>
       </div>

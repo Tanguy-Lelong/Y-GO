@@ -1,0 +1,32 @@
+[{
+    "departureCity": "Paris",
+    "tripId": "dc05a8a2-3e43-11ec-acbd-3c6aa7c34177",
+    "trip": {
+        "timeDeparture": "2021-12-10 12:40",
+        "passengers": [{
+                "Status": "accepted",
+                "email": "test1.test1@ynov.com"
+            },
+            {
+                "Status": "accepted",
+                "email": "test2.test2@ynov.com"
+            },
+            {
+                "Status": "pending",
+                "email": "test5.test5@ynov.com"
+            }
+            ,{
+                "Status": "pending",
+                "email": "test6.test5@ynov.com"
+            }
+        ],
+        "phone": "0610033531",
+        "price": "4",
+        "maxPassengers": "5",
+        "smoking": false,
+        "arrivingCity": "Sophia",
+        "description": "vence vers sophia",
+        "adress": "100 rue de sophia",
+        "email": "test1@test1.com"
+    }
+}]

@@ -1,0 +1,19 @@
+.site-card-border-less-wrapper {
+    padding: 30px;
+    background: #ececec;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+.passenger-img{
+  width: 20%;
+}
+.image-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+}
+
+.homeKey{
+  font-weight: bold;
+}
