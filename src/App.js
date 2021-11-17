@@ -5,11 +5,10 @@ import { Icon, Menu, Sidebar } from 'semantic-ui-react';
 import MenuBar from './Components/Menu/Menu';
 import { storeSideBarVisibility } from './features/Store/Store';
 import { useSelector } from 'react-redux';
-
+import Rides from "./Components/Rides/Rides";
 
 export default function App() {
   const isSideBarVisible = useSelector(storeSideBarVisibility);
-
   return (
     <Router>
       <Sidebar as={Menu} animation='overlay' icon='labeled' inverted vertical visible={isSideBarVisible} width='thin'>
@@ -27,9 +26,13 @@ export default function App() {
         <Route path="/loginAndRegister">
           <LoginAndregisterWrapper/>
         </Route>
+        <Route path="/rides">
+          <Rides/>
+        </Route>
         <Route path="/">
           Home
         </Route>
+
       </Switch>
       </div>
     </Router>

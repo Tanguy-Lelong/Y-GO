@@ -46,8 +46,11 @@ export default function MenuBar() {
               <img style={{height: "60px",}} src={logoYnov}></img>
           </div>
           <div className="bdmMenu">
-          <Link to="/" ><div>Home</div></Link></div>
-          <div  className="poleMenu">Ajout</div>
+            <Link to="/" ><div>Home</div></Link>
+          </div>
+          <div className="bdmMenu">
+            <Link to="/rides" ><div>Rides</div></Link>
+          </div>
           <div  className="userMenu">
             <Link to="/loginAndRegister">
               <div >

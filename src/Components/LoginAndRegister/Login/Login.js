@@ -77,7 +77,6 @@ export function Login() {
         }
       });
       // setLoginStatus("Login")
-     
     }
 
     const loginFromRecover = () => {
@@ -141,9 +140,8 @@ export function Login() {
       }
     
     if (loginStatus === "Forgot") {
-
-        return (
-          <div className="loginPage">
+      return (
+        <div className="loginPage">
             <div style={{width: "30%", marginLeft: "35%"}}>
             </div>
             <div>
@@ -253,7 +251,7 @@ export function Login() {
               <div style={{width: "100%"}}>
                 <Button style={{width: "100%", height: "40px", borderRadius: "5px"}}>SE CONNECTER</Button>
               </div>
-              <div style={{padding: "10px", textAlign: "center", marginTop: "10px", cursor: "pointer"}} onClick={() => dispatch(changeStatusPage("Register"))}> 
+              <div className="noAccountButton" onClick={() => dispatch(changeStatusPage("Register"))}> 
                 Tu n'as pas encore de compte ? Inscrit-toi
                 </div>
                 </div>
