@@ -7,11 +7,12 @@ import { useDispatch } from 'react-redux';
 import OtpInput from 'react-otp-input';
 import { LoadingOutlined } from '@ant-design/icons';
 import { changeStatusPage } from '../../../features/Store/Store';
+import Profil from '../Profile/Profile';
 
 export function Login() {
 
       const dispatch = useDispatch();
-      const [loginStatus, setLoginStatus] = useState("Login");
+      const [loginStatus, setLoginStatus] = useState("putVerificationCode");
       const [userName, setUsername] = useState("Login");
       const [otpValue, setOtpValue] = useState("");
       const [newPassword1, setNewPassword1] = useState("");
@@ -20,6 +21,7 @@ export function Login() {
       const [stateLastButton, setStateLastButton] = useState("Save my changes");
       const [isLoggingIn, setIsLoggingIn] = useState(false);
       const [isErrorOnLogin, setErrorOnLogin] = useState(false);
+
 
       const onFinishFailed = (errorInfo) => {
         console.log('Failed:', errorInfo);
@@ -86,58 +88,37 @@ export function Login() {
       }
       inputVerificationCode();
     }
-
-      const login = (values) => {
-        // setIsLoggingIn(true)
-        //   console.log(values)
-        // localStorage.setItem("User", values.username)
-        // const authenticationData = {
-        //   Username : values.username,
-        //   Password : values.password,
-        // };
-        // const authenticationDetails = new AmazonCognitoIdentity.AuthenticationDetails(authenticationData);
-        // const userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
-        // const userData = {
-        //     Username : values.username,
-        //     Pool : userPool,
-        // };
-        // const cognitoUser = new AmazonCognitoIdentity.CognitoUser(userData);
-        // cognitoUser.authenticateUser(authenticationDetails, {
-        //   onSuccess: function (result) {
-        //     localStorage.setItem('Token', result.idToken.jwtToken);
-        //     setErrorOnLogin(false);
-        //     if (result.accessToken.payload['cognito:groups']) {
-        //         if (result.accessToken.payload['cognito:groups'].includes("Admin") === true) {
-        //             localStorage.setItem('Token', result.idToken.jwtToken);
-        //             dispatch(changeStatusPage("AdminPage"));
-        //             dispatch(changeUserName(values.username));
-        //             dispatch(changeToken(result.idToken.jwtToken));
-        //             localStorage.setItem("Admin", "true")
-
-        //         }
-        //         else {
-        //             localStorage.setItem('Token', result.idToken.jwtToken);
-        //             dispatch(changeStatusPage("UserPage"));
-        //             dispatch(changeUserName(values.username));
-        //             dispatch(changeToken(result.idToken.jwtToken));
-        //             localStorage.setItem("Admin", "false")
-        //         }
-        //     }
-        //     else {
-        //         localStorage.setItem('Token', result.idToken.jwtToken);
-        //         dispatch(changeStatusPage("UserPage"));
-        //         dispatch(changeUserName(values.username));
-        //         dispatch(changeToken(result.idToken.jwtToken));
-        //         localStorage.setItem("Admin", "false")
-        //     }
-
-        //   },
-        //   onFailure: function(err) {
-        //     setErrorOnLogin(true)
-        //     console.log(err)
-        //   }
-        // });
-      }
+    const handleLogin = (values) => {
+      console.log(values);
+      const email = values.username;
+      const password = values.password; 
+      const authenticationData = {
+        Username : email,
+        Password : password,
+      };
+      const authenticationDetails = new AmazonCognitoIdentity.AuthenticationDetails(authenticationData);
+      const userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
+      const userData = {
+          Username : email,
+          Pool : userPool,
+      };
+      const cognitoUser = new AmazonCognitoIdentity.CognitoUser(userData);
+      cognitoUser.authenticateUser(authenticationDetails, {
+        onSuccess: function (result) {
+          console.log(result.getIdToken().getJwtToken())
+          localStorage.setItem("token", result.getIdToken().getJwtToken())
+          setLoginStatus("putVerificationCode")
+        },
+        onFailure: function(err) {
+          console.log(err)
+        }
+      });
+    }
+    if (localStorage.getItem("token")) {
+      return (
+        <Profil/>
+      )
+    }
     
     if (loginStatus === "Forgot") {
       return (
@@ -212,7 +193,7 @@ export function Login() {
         <div style={{fontSize: 22, color: "#236192", marginTop: "-50px", marginBottom: "50px", color: "#42ab9e", borderBottom: "1px solid #42ab9e"}}>Se connecter</div>
       <Form
           name="basic"
-          onFinish={login}
+          onFinish={handleLogin}
           onFinishFailed={onFinishFailed}
         >
           <div>
@@ -243,13 +224,13 @@ export function Login() {
           <div style={{width: "100%"}}>
             {
               (isLoggingIn === true && isErrorOnLogin === false)  ?
-              <Button style={{width: "100%", backgroundColor: "white", padding: "10px", borderRadius: "5px", height: "100%", marginLeft: "0%"}} type="primary" htmlType="submit">
+              <Button  style={{width: "100%", backgroundColor: "white", padding: "10px", borderRadius: "5px", height: "100%", marginLeft: "0%"}} type="primary" htmlType="submit">
               <LoadingOutlined style={{color: "#236192"}}/>
             </Button>
               :
               <div>
               <div style={{width: "100%"}}>
-                <Button style={{width: "100%", height: "40px", borderRadius: "5px"}}>SE CONNECTER</Button>
+                <Button  htmlType="submit" style={{width: "100%", height: "40px", borderRadius: "5px"}}>SE CONNECTER</Button>
               </div>
               <div className="noAccountButton" onClick={() => dispatch(changeStatusPage("Register"))}> 
                 Tu n'as pas encore de compte ? Inscrit-toi
