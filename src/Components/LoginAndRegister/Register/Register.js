@@ -1,11 +1,25 @@
 import React, { useState } from 'react';
 import * as AmazonCognitoIdentity from 'amazon-cognito-identity-js';
-import { Input,Button, Form,  } from 'antd';
+import { Input,Button, Form, notification } from 'antd';
 import { poolData } from '../../../Pool';
 import { useDispatch } from 'react-redux';
 import OtpInput from 'react-otp-input';
 import { changeStatusPage } from '../../../features/Store/Store';
 import './Register.scss'
+import {
+  RadiusUpleftOutlined,
+  RadiusUprightOutlined,
+  RadiusBottomleftOutlined,
+  RadiusBottomrightOutlined,
+} from '@ant-design/icons';
+
+const openNotification = (placement) => {
+  notification.info({
+    description:
+      'Ton compte à bien été créé',
+    placement,
+  });
+};
 
 export function Register() {
   const dispatch = useDispatch();
@@ -68,6 +82,8 @@ export function Register() {
             return;
         }
         console.log('call result: ' + result);
+        openNotification('bottomRight')
+        dispatch(changeStatusPage("Login"))
     });
     }
   };

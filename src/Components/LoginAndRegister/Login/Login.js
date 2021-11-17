@@ -21,6 +21,7 @@ export function Login() {
       const [stateLastButton, setStateLastButton] = useState("Save my changes");
       const [isLoggingIn, setIsLoggingIn] = useState(false);
       const [isErrorOnLogin, setErrorOnLogin] = useState(false);
+      const [isUserLogged, setIsUserLogged] = useState(false)
 
 
       const onFinishFailed = (errorInfo) => {
@@ -105,6 +106,7 @@ export function Login() {
       const cognitoUser = new AmazonCognitoIdentity.CognitoUser(userData);
       cognitoUser.authenticateUser(authenticationDetails, {
         onSuccess: function (result) {
+          setIsUserLogged(true)
           console.log(result.getIdToken().getJwtToken())
           localStorage.setItem("token", result.getIdToken().getJwtToken())
           setLoginStatus("putVerificationCode")
@@ -114,7 +116,7 @@ export function Login() {
         }
       });
     }
-    if (localStorage.getItem("token")) {
+    if (localStorage.getItem("token") || isUserLogged === true) {
       return (
         <Profil/>
       )
